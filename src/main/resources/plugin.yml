@@ -1,0 +1,19 @@
+name: MCONE-Bedwars
+version: 2.0.1
+main: eu.mcone.bedwars.main.bedwars
+depend: [MCONE-BukkitCoreSystem]
+
+author: Dominik Lippl
+authors: [Rufus Maiwald]
+website: mcone.eu
+desciption: Bedwars plugin 2017-2018 by MCONE.EU
+
+
+commands:
+  bw:
+    description: Returns a list of all command of the plugin
+    aliases: [bedwars, bw]
+  start:
+    description: Shorten the lobby countdown
+  set:
+    description: Set all Locations off the game
