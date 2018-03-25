@@ -69,10 +69,11 @@ public class set_cmd implements CommandExecutor {
                 if (args[0].equalsIgnoreCase("spawner")) {
                     if (args[1].equalsIgnoreCase("gold") || args[1].equalsIgnoreCase("iron") || args[1].equalsIgnoreCase("bronze")) {
                         try {
+                            String spawner_type = args[1].replaceAll("Gold", "gold").replaceAll("Iron", "iron").replaceAll("Bronze", "bronze");
                             int platz = Integer.parseInt(args[2]);
 
-                            Factory.createConfigLocation(p.getLocation(), "Spawner." + args[1] + "." + platz, Utils.CfgSpawner, Utils.yCfgSpawner);
-                            Messenger.sendSimpleMessage(p, "§7Du hast einen §c" + args[1] + " §7Spawner mit der ID §c" + platz + " §7gesetzt.");
+                            Factory.createConfigLocation(p.getLocation(), "Spawner." + spawner_type + "." + platz, Utils.CfgSpawner, Utils.yCfgSpawner);
+                            Messenger.sendSimpleMessage(p, "§7Du hast einen §c" + spawner_type + " §7Spawner mit der ID §c" + platz + " §7gesetzt.");
 
                         } catch (NumberFormatException e) {
                             Messenger.sendSimpleMessage(p, "§cBitte gib eine gültige Zahl an!");

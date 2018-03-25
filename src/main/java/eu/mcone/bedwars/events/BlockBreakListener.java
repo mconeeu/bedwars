@@ -14,6 +14,7 @@ import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.bedwars.achievements.Achievements;
 import eu.mcone.coresystem.bukkit.CoreSystem;
 import eu.mcone.coresystem.bukkit.api.StatsAPI;
+import eu.mcone.coresystem.lib.gamemode.Gamemode;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -29,7 +30,7 @@ import java.util.UUID;
 public class BlockBreakListener implements Listener {
 
     private static ArrayList<Integer> betten = new ArrayList<>();
-    private StatsAPI stats = CoreSystem.statsBedwars;
+    private StatsAPI stats = new StatsAPI(Gamemode.BEDWARS, CoreSystem.mysql2);
 
     @EventHandler
     public void BlockBreak(BlockBreakEvent e) {

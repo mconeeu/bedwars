@@ -13,7 +13,8 @@ import eu.mcone.bedwars.methods.Factory;
 import eu.mcone.bedwars.methods.Messenger;
 import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.bedwars.achievements.Achievements;
-import eu.mcone.bedwars.spawner.Spawner;
+import eu.mcone.bedwars.spawner.SpawnerHandler;
+import eu.mcone.bedwars.spawner.Spawner_OLD;
 import eu.mcone.coresystem.bukkit.api.CoinsAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -27,8 +28,9 @@ import java.io.IOException;
 
 public class bedwars extends JavaPlugin {
 
+    public static SpawnerHandler sh;
     public static Worldborder wb;
-    public static Spawner spawner;
+    public static Spawner_OLD spawner;
     private static bedwars plugin;
 
     private static File fConf = new File("plugins/MCONE-Bedwars/Setup", "config.yml");
@@ -43,7 +45,7 @@ public class bedwars extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-        spawner = new Spawner();
+        spawner = new Spawner_OLD();
 
         wb = new Worldborder(Factory.getConfigLocation("Lobby", Utils.yCfgLobby), 250);
 
@@ -58,6 +60,8 @@ public class bedwars extends JavaPlugin {
 
         /* Chance the Gamestate to LobbyState */
         Gamestatehandler.setGameState(Gamestate.LOBBY_STATE);
+
+        sh = new SpawnerHandler();
 
         /* Create the Config File */
         createConfigFile();
@@ -82,9 +86,6 @@ public class bedwars extends JavaPlugin {
         Messenger.sendSimpleConsoleMessage("§7Plugin Name: §c" + this.getDescription().getName());
         Messenger.sendSimpleConsoleMessage("§7Author: §c" + this.getDescription().getAuthors());
         Messenger.sendSimpleConsoleMessage("§7Version: §c" + this.getDescription().getVersion());
-
-        /* Check all Locations (Lobby, Villager, Item_Spawner, Team, Team_Bed) */
-        Utils.checkLocations();
     }
 
     //Config.yml

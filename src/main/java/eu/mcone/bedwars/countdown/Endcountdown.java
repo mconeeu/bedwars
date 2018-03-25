@@ -34,7 +34,7 @@ public class Endcountdown extends Countdown {
                     case 1:
                         for (Player all : Bukkit.getOnlinePlayers()) {
                             all.sendMessage(Utils.prefix + "§cDer Server startet in §f" + sconds + " §cSekunden neu!");
-                            Title.sendTitle(all, 2, 5, 2, Utils.prefix, "§cRestart in §7" + sconds + " §cSekunden");
+                            Title.sendTitle(all, 5, 10, 5, Utils.prefix, "§cRestart in §7" + sconds + " §cSekunden");
                         }
                         break;
 

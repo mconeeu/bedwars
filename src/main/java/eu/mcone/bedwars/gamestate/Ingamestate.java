@@ -15,6 +15,7 @@ import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.bedwars.countdown.Endcountdown;
 import eu.mcone.bedwars.tempkits.Tempkits;
 import eu.mcone.coresystem.bukkit.CoreSystem;
+import eu.mcone.coresystem.bukkit.scoreboard.CoreScoreboard;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -75,9 +76,7 @@ public class Ingamestate extends Gamestate {
             }
 
             p.playSound(p.getLocation(), Sound.ANVIL_USE, 1, 1);
-            return;
         }
-
         endCountdown = new Endcountdown();
     }
 

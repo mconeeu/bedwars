@@ -54,6 +54,19 @@ public class Factory {
 		return new Location(Bukkit.getWorld(bedwars.cfgSetup.getString("Bedwars-World-Name-Map")), x, y, z);
 	}
 
+	public static Boolean isLocationNull(String path, YamlConfiguration cfg) {
+
+		double x = cfg.getDouble(path + ".X");
+		double y = cfg.getDouble(path + ".y");
+		double z = cfg.getDouble(path + ".Z");
+
+		if(x != 0 && y != 0 && z != 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	public static double getX(String path, YamlConfiguration cfg) {
 		return cfg.getDouble(path + ".X");
 	}

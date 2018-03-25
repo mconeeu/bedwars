@@ -13,10 +13,12 @@ import eu.mcone.bedwars.gamestate.Lobbystate;
 import eu.mcone.bedwars.main.bedwars;
 import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.coresystem.bukkit.player.CorePlayer;
+import eu.mcone.coresystem.bukkit.scoreboard.CoreObjective;
+import eu.mcone.coresystem.bukkit.scoreboard.MainScoreboard;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Scoreboard;
 
-public class Objective extends eu.mcone.coresystem.bukkit.scoreboard.Objective{
+public class Objective extends CoreObjective {
 
     public Objective() {
         super(DisplaySlot.SIDEBAR, "Main", "Bedwars");

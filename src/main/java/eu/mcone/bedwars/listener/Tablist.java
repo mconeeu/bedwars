@@ -4,11 +4,11 @@ import eu.mcone.bedwars.gamestate.Gamestatehandler;
 import eu.mcone.bedwars.gamestate.Ingamestate;
 import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.coresystem.bukkit.player.CorePlayer;
-import eu.mcone.coresystem.bukkit.scoreboard.Scoreboard;
+import eu.mcone.coresystem.bukkit.scoreboard.CoreScoreboard;
 import eu.mcone.coresystem.lib.util.RandomString;
 import org.bukkit.scoreboard.Team;
 
-public class Tablist extends Scoreboard {
+public class Tablist extends CoreScoreboard {
 
     @Override
     public void setPlayerTeams(CorePlayer p, org.bukkit.scoreboard.Scoreboard sb) {

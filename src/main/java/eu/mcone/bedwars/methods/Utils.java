@@ -259,27 +259,6 @@ public class Utils {
 		return null;
 	}
 
-	public static void checkLocations() {
-
-		if (Utils.CfgLobby.exists()) {
-			Messenger.sendSimpleConsoleMessage( "§aDer Lobby Spawn wurde gestezt!");
-		} else {
-			Messenger.sendSimpleConsoleMessage("§cDer Lobby Spawn wurde noch nicht gestezt!");
-		}
-
-		if (Utils.CfgLobby.exists()) {
-			Messenger.sendSimpleConsoleMessage( "§aDie Spawner wurde gestezt!");
-		} else {
-			Messenger.sendSimpleConsoleMessage("§cDie Spawner wurde noch nicht gestezt!");
-		}
-
-		if (Utils.CfgLobby.exists() || Utils.CfgLobby.exists()) {
-			Messenger.sendSimpleConsoleMessage("§aDie Teams und Teambetten wurde gestezt!");
-		} else {
-			Messenger.sendSimpleConsoleMessage( "§cDie Teams und Teambetten wurde noch nicht gestezt!");
-		}
-	}
-	
 	public static void HasTeam() {
 		System.out.println("check if all players have a team");
 		

@@ -12,6 +12,7 @@ import eu.mcone.bedwars.methods.Factory;
 import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.coresystem.bukkit.CoreSystem;
 import eu.mcone.coresystem.bukkit.api.StatsAPI;
+import eu.mcone.coresystem.lib.gamemode.Gamemode;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Sound;
@@ -24,7 +25,7 @@ import org.bukkit.scoreboard.DisplaySlot;
 
 public class PlayerQuitListener implements Listener {
 
-    private StatsAPI stats = CoreSystem.statsBedwars;
+    private StatsAPI stats = new StatsAPI(Gamemode.BEDWARS, CoreSystem.mysql2);
 
     @EventHandler
     public void PlayerQuit(PlayerQuitEvent e) {
@@ -115,6 +116,8 @@ public class PlayerQuitListener implements Listener {
 
     private void checkWin(Player all){
         if (Utils.canRespawnRot && Utils.rot.size() <= 1 && Utils.Lila.size() == 0 && Utils.gelb.size() == 0 && Utils.blau.size() == 0) {
+            Gamestatehandler.setGameState(Gamestate.END_STATE);
+            Gamestatehandler.getCurrentState().end();
 
             all.sendMessage(Utils.prefix + "§7Team §cRot §7Hat das Spiel gewonnen!");
             Title.sendTitle(all, 25, 25, 25, Utils.prefix, "§7Team §cRot §7Hat das Spiel gewonnen!");

@@ -17,6 +17,7 @@ import eu.mcone.bedwars.tempkits.Tempkits;
 import eu.mcone.bedwars.achievements.Achievements;
 import eu.mcone.coresystem.bukkit.CoreSystem;
 import eu.mcone.coresystem.bukkit.api.StatsAPI;
+import eu.mcone.coresystem.lib.gamemode.Gamemode;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Entity;
@@ -32,7 +33,7 @@ import java.util.UUID;
 public class PlayerDeathListener implements Listener {
 
     private static ArrayList<Integer> roundkills = new ArrayList<>();
-    private StatsAPI stats = CoreSystem.statsBedwars;
+    private StatsAPI stats = new StatsAPI(Gamemode.BEDWARS, CoreSystem.mysql2);
 
     @SuppressWarnings("unlikely-arg-type")
 

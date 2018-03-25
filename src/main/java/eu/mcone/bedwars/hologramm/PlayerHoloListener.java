@@ -11,6 +11,7 @@ import eu.mcone.bedwars.methods.Factory;
 import eu.mcone.bedwars.methods.Utils;
 import eu.mcone.coresystem.bukkit.CoreSystem;
 import eu.mcone.coresystem.bukkit.api.StatsAPI;
+import eu.mcone.coresystem.lib.gamemode.Gamemode;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -18,7 +19,7 @@ import org.bukkit.event.Listener;
 
 public class PlayerHoloListener implements Listener{
 
-    private static StatsAPI stats = CoreSystem.statsBedwars;
+    private static StatsAPI stats = new StatsAPI(Gamemode.BEDWARS, CoreSystem.mysql2);
 
     public static void Holo(final Player p) {
         String[] Text = { "§7» §c§lBedwars",

@@ -23,17 +23,17 @@ public class Ressourcevoting {
         if (Voting_utils.Gold.size() > Voting_utils.No_Gold.size() || Voting_utils.Gold.size() == Voting_utils.No_Gold.size()) {
             Voting_utils.ressource = Boolean.TRUE;
 
-            bedwars.spawner.StartGoldThread();
-            bedwars.spawner.StartIronThread();
-            bedwars.spawner.StartBronzeThread();
+            bedwars.sh.startSpawner(Spawner.BRONZE);
+            bedwars.sh.startSpawner(Spawner.IRON);
+            bedwars.sh.startSpawner(Spawner.GOLD);
 
             System.out.println("Gold Thread: TRUE");
 
         } else if (Voting_utils.Gold.size() < Voting_utils.No_Gold.size()) {
             Voting_utils.ressource = Boolean.FALSE;
 
-            bedwars.spawner.StartIronThread();
-            bedwars.spawner.StartBronzeThread();
+            bedwars.sh.startSpawner(Spawner.BRONZE);
+            bedwars.sh.startSpawner(Spawner.IRON);
 
             System.out.println("Gold Thread: FALSE");
         } else {
